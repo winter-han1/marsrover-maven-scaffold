@@ -1,8 +1,11 @@
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
 public class MarsRoverTest {
+
 
     @Test
     public void should_land_the_rover_on_area() {
@@ -98,7 +101,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void name() {
+    public void should_execute_batch_commonds() {
         Rover rover = new Rover();
         RoverController roverController = new RoverController(rover);
         String mission = "10,10,5,5,E,M,L,M,R";
