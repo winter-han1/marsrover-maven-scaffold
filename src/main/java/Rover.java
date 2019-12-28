@@ -27,6 +27,9 @@ public class Rover {
     public void move() {
         switch (this.direction) {
             case "E":
+                if (this.position_x == 10) {
+                    throw new IllegalArgumentException("out of area width " + area.getWidth() + ", can't more");
+                }
                 this.position_x += 1;
                 break;
             case "S":
