@@ -47,14 +47,25 @@ public class MarsRoverTest {
         rover.move();
     }
 
-//    @Test
-//    public void should_warning_when_more_out_of_area_height() {
-//        expectedException.expect(IllegalArgumentException.class);
-//        expectedException.expectMessage("out of area height 10, can't more");
-//        Area area = new Area(10, 10);
-//        Rover rover = new Rover();
-//        rover.land(area, 2, 10, "N");
-//    }
+    @Test
+    public void should_warning_when_more_out_of_area_height_when_direction_to_north() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("out of area height 10, can't more");
+        Area area = new Area(10, 10);
+        Rover rover = new Rover();
+        rover.land(area, 2, 10, "N");
+        rover.move();
+    }
+
+    @Test
+    public void should_warning_when_more_out_of_area_height_when_direction_to_south() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("out of area height zero, can't more");
+        Area area = new Area(10, 10);
+        Rover rover = new Rover();
+        rover.land(area, 2, 0, "S");
+        rover.move();
+    }
 
     @Test
     public void should_land_the_rover_on_area() {

@@ -33,6 +33,9 @@ public class Rover {
                 this.position_x += 1;
                 break;
             case "S":
+                if (this.position_y == 0) {
+                    throw new IllegalArgumentException("out of area height zero, can't more");
+                }
                 this.position_y -= 1;
                 break;
             case "W":
@@ -42,6 +45,9 @@ public class Rover {
                 this.position_x -= 1;
                 break;
             case "N":
+                if (this.position_y == 10) {
+                    throw new IllegalArgumentException("out of area height " + area.getHeight() + ", can't more");
+                }
                 this.position_y += 1;
                 break;
             default:
