@@ -10,4 +10,8 @@ public class Area {
     public boolean containWidth(int position_x) {
         return width >= position_x;
     }
+
+    public Integer getWidth() {
+        return this.width;
+    }
 }
