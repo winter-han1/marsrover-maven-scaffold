@@ -28,12 +28,22 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_warning_when_more_out_of_area_width() {
+    public void should_warning_when_more_out_of_area_width_when_direction_to_east() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("out of area width 10, can't more");
         Area area = new Area(10, 10);
         Rover rover = new Rover();
         rover.land(area, 10, 5, "E");
+        rover.move();
+    }
+
+    @Test
+    public void should_warning_when_more_out_of_area_width_when_direction_to_west() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("out of area width zero, can't more");
+        Area area = new Area(10, 10);
+        Rover rover = new Rover();
+        rover.land(area, 0, 5, "W");
         rover.move();
     }
 

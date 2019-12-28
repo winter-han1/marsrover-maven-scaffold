@@ -36,6 +36,9 @@ public class Rover {
                 this.position_y -= 1;
                 break;
             case "W":
+                if (this.position_x == 0) {
+                    throw new IllegalArgumentException("out of area width zero, can't more");
+                }
                 this.position_x -= 1;
                 break;
             case "N":
