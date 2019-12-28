@@ -9,11 +9,11 @@ public class RoverController {
         // 10,10,5,5,E,M,L,M,R
         String[] commands = mission.split(",");
 
-        Integer area_weight = Integer.valueOf(commands[0]);
+        Integer area_width = Integer.valueOf(commands[0]);
         Integer area_height = Integer.valueOf(commands[1]);
         Integer rover_x = Integer.valueOf(commands[2]);
         Integer rover_y = Integer.valueOf(commands[3]);
-        rover.land(new Area(area_weight, area_height), rover_x, rover_y, commands[4]);
+        rover.land(new Area(area_width, area_height), rover_x, rover_y, commands[4]);
 
         for (int i = 5; i < commands.length; i++) {
             executeOneCommand(commands[i]);

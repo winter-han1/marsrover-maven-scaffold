@@ -6,6 +6,17 @@ import static org.fest.assertions.api.Assertions.assertThat;
 
 public class MarsRoverTest {
 
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+
+    @Test
+    public void should_warning_when_land_out_of_area() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("x=20 is out of width 10");
+        Area area = new Area(10, 10);
+        Rover rover = new Rover();
+        rover.land(area, 20, 30, "E");
+    }
 
     @Test
     public void should_land_the_rover_on_area() {

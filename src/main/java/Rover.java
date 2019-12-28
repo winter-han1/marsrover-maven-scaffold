@@ -7,6 +7,10 @@ public class Rover {
 
 
     public void land(Area area, int position_x, int position_y, String direction) {
+        if (!area.containWidth(position_x)) {
+            throw new IllegalArgumentException("x=20 is out of width 10");
+        }
+
         this.area = area;
         this.position_x = position_x;
         this.position_y = position_y;

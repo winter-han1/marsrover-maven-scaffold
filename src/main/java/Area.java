@@ -1,9 +1,13 @@
 public class Area {
-    private int x;
-    private int y;
+    private int width;
+    private int height;
 
-    public Area(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Area(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public boolean containWidth(int position_x) {
+        return width >= position_x;
     }
 }
