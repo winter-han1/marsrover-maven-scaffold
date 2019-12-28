@@ -14,4 +14,12 @@ public class Area {
     public Integer getWidth() {
         return this.width;
     }
+
+    public boolean containHeight(int position_y) {
+        return height >= position_y;
+    }
+
+    public Integer getHeight() {
+        return this.height;
+    }
 }

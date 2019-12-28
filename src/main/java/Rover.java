@@ -10,6 +10,9 @@ public class Rover {
         if (!area.containWidth(position_x)) {
             throw new IllegalArgumentException("x=" + position_x + " is out of width " + area.getWidth());
         }
+        if (!area.containHeight(position_y)) {
+            throw new IllegalArgumentException("y=" + position_y + " is out of height " + area.getHeight());
+        }
 
         this.area = area;
         this.position_x = position_x;
