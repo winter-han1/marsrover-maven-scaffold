@@ -10,12 +10,21 @@ public class MarsRoverTest {
     public ExpectedException expectedException = ExpectedException.none();
 
     @Test
-    public void should_warning_when_land_out_of_area() {
+    public void should_warning_when_land_out_of_area_width() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("x=20 is out of width 10");
         Area area = new Area(10, 10);
         Rover rover = new Rover();
         rover.land(area, 20, 30, "E");
+    }
+
+    @Test
+    public void should_warning_when_land_out_of_area_height() {
+        expectedException.expect(IllegalArgumentException.class);
+        expectedException.expectMessage("y=30 is out of height 10");
+        Area area = new Area(10, 10);
+        Rover rover = new Rover();
+        rover.land(area, 2, 30, "E");
     }
 
     @Test
